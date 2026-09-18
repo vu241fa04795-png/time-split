@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>⚡ TIME SPLIT</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="game-container">
+
+
+        <!-- =====================================
+             START SCREEN
+        ====================================== -->
+
+        <section id="startScreen"
+                 class="screen">
+
+            <div class="logo">
+                ⚡
+            </div>
+
+            <h1>TIME SPLIT</h1>
+
+            <p class="tagline">
+                One move. Two characters.
+                One strategy.
+            </p>
+
+            <button id="startGameBtn"
+                    class="main-button">
+
+                🎮 START GAME
+
+            </button>
+
+            <div class="how-to">
+
+                <h3>🧠 HOW TO PLAY</h3>
+
+                <p>
+                    🏃 You move one way
+                </p>
+
+                <p>
+                    🟣 Shadow moves the opposite way
+                </p>
+
+                <p>
+                    💎 Collect diamonds
+                </p>
+
+                <p>
+                    🪨 Avoid obstacles
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             DIFFICULTY SCREEN
+        ====================================== -->
+
+        <section id="difficultyScreen"
+                 class="screen hidden">
+
+            <h1>🎯 SELECT DIFFICULTY</h1>
+
+            <p class="screen-description">
+                Choose your challenge
+            </p>
+
+
+            <div class="difficulty-container">
+
+
+                <button class="difficulty-card easy"
+                        data-difficulty="easy">
+
+                    <span class="difficulty-icon">
+                        🟢
+                    </span>
+
+                    <span class="difficulty-name">
+                        EASY
+                    </span>
+
+                    <span class="difficulty-info">
+                        3 Lives
+                        <br>
+                        Few Obstacles
+                    </span>
+
+                </button>
+
+
+
+                <button class="difficulty-card medium"
+                        data-difficulty="medium">
+
+                    <span class="difficulty-icon">
+                        🟡
+                    </span>
+
+                    <span class="difficulty-name">
+                        MEDIUM
+                    </span>
+
+                    <span class="difficulty-info">
+                        3 Lives
+                        <br>
+                        More Obstacles
+                    </span>
+
+                </button>
+
+
+
+                <button class="difficulty-card hard"
+                        data-difficulty="hard">
+
+                    <span class="difficulty-icon">
+                        🔴
+                    </span>
+
+                    <span class="difficulty-name">
+                        HARD
+                    </span>
+
+                    <span class="difficulty-info">
+                        2 Lives
+                        <br>
+                        Many Obstacles
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+            <button id="backToStart"
+                    class="back-button">
+
+                ← BACK
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             LEVEL SCREEN
+        ====================================== -->
+
+        <section id="levelScreen"
+                 class="screen hidden">
+
+            <h1 id="difficultyTitle">
+                🟢 EASY
+            </h1>
+
+            <p class="screen-description">
+                Select a level
+            </p>
+
+
+            <div id="levelContainer"
+                 class="level-container">
+            </div>
+
+
+            <button id="backToDifficulty"
+                    class="back-button">
+
+                ← BACK TO DIFFICULTY
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =====================================
+             GAME SCREEN
+        ====================================== -->
+
+        <section id="gameScreen"
+                 class="screen hidden">
+
+
+            <h1>⚡ TIME SPLIT ⚡</h1>
+
+            <p class="subtitle">
+                Control yourself and your shadow!
+            </p>
+
+
+            <!-- SCORE -->
+
+            <div class="score-board">
+
+                <div>
+                    💎 SCORE
+                    <span id="score">0</span>
+                </div>
+
+                <div>
+                    ❤️ LIVES
+                    <span id="lives">3</span>
+                </div>
+
+                <div>
+                    🏆 LEVEL
+                    <span id="level">1</span>
+                </div>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div id="message">
+                Think before you move!
+            </div>
+
+
+            <!-- GAME AREA -->
+
+            <div class="game-area">
+
+
+                <!-- SHADOW -->
+
+                <div class="lane shadow-lane">
+
+                    <div class="lane-title">
+                        🟣 SHADOW
+                    </div>
+
+                    <div id="shadow-player"
+                         class="player shadow">
+
+                        🟣
+
+                    </div>
+
+                    <div id="shadow-obstacles">
+                    </div>
+
+                    <div id="shadow-diamonds">
+                    </div>
+
+                </div>
+
+
+
+                <!-- MIDDLE -->
+
+                <div class="middle">
+
+                    ⚡ TIME SPLIT ⚡
+
+                </div>
+
+
+
+                <!-- PLAYER -->
+
+                <div class="lane player-lane">
+
+                    <div class="lane-title">
+                        🔵 YOU
+                    </div>
+
+                    <div id="player"
+                         class="player">
+
+                        🏃
+
+                    </div>
+
+                    <div id="player-obstacles">
+                    </div>
+
+                    <div id="player-diamonds">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="controls">
+
+                <button id="leftBtn">
+                    ⬅ LEFT
+                </button>
+
+                <button id="restartBtn">
+                    🔄 RESTART
+                </button>
+
+                <button id="rightBtn">
+                    RIGHT ➡
+                </button>
+
+            </div>
+
+
+            <div class="game-bottom-buttons">
+
+                <button id="levelsButton">
+                    📋 LEVELS
+                </button>
+
+                <button id="gameDifficultyButton">
+                    🎯 DIFFICULTY
+                </button>
+
+            </div>
+
+
+            <div class="instructions">
+
+                ⬅ → YOU LEFT / SHADOW RIGHT
+
+                <br>
+
+                ➡ → YOU RIGHT / SHADOW LEFT
+
+                <br>
+
+                💎 Collect all diamonds
+
+                <br>
+
+                🪨 Avoid rocks
+
+                <br>
+
+                Press R to restart
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
